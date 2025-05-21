@@ -101,11 +101,9 @@ export default function FeedbackForm() {
               onChange={handleChange}
               label="Journal Type"
             >
-              <MenuItem value="academic">Academic Journal</MenuItem>
-              <MenuItem value="personal">Personal Journal</MenuItem>
-              <MenuItem value="bullet">Bullet Journal</MenuItem>
-              <MenuItem value="travel">Travel Journal</MenuItem>
-              <MenuItem value="art">Art Journal</MenuItem>
+              <MenuItem value="academic">Her Wealth</MenuItem>
+              <MenuItem value="personal">Heart & Truth</MenuItem>
+              <MenuItem value="bullet">Daily goals & Grace</MenuItem>
             </Select>
           </FormControl>
 
