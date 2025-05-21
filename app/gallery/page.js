@@ -3,12 +3,10 @@
 import { useState } from "react";
 import {
   Container,
-  Typography,
   Box,
   Grid,
   Card,
   CardMedia,
-  CardContent,
   Dialog,
   DialogContent,
   IconButton,
@@ -33,14 +31,6 @@ export default function GalleryPage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
-      <Typography
-        variant="h3"
-        align="center"
-        fontWeight={700}
-        sx={{ mb: 5, letterSpacing: 1, color: theme.palette.text.primary }}
-      >
-        Gallery
-      </Typography>
       <Grid
         container
         spacing={{ xs: 2, md: 4 }}
@@ -53,15 +43,14 @@ export default function GalleryPage() {
               onClick={() => handleClickOpen(item)}
               sx={{
                 height: 340,
-                borderRadius: 4,
-                boxShadow: 3,
+                borderRadius: 0,
+                boxShadow: 0,
                 overflow: "hidden",
                 position: "relative",
                 cursor: "pointer",
-                transition: "transform 0.2s, box-shadow 0.2s",
+                transition: "transform 0.2s",
                 '&:hover': {
                   transform: 'scale(1.035)',
-                  boxShadow: 8,
                 },
               }}
               elevation={0}
@@ -72,39 +61,12 @@ export default function GalleryPage() {
                   image={item.image}
                   alt={item.title}
                   sx={{
-                    height: 260,
+                    height: 340,
                     width: "100%",
                     objectFit: "cover",
-                    transition: "filter 0.2s",
+                    transition: "none",
                   }}
                 />
-                <Box
-                  sx={{
-                    position: "absolute",
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    height: 60,
-                    bgcolor: "rgba(0,0,0,0.55)",
-                    color: "#fff",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    opacity: 0,
-                    transition: "opacity 0.2s",
-                    pointerEvents: "none",
-                    fontWeight: 600,
-                    fontSize: 20,
-                    letterSpacing: 0.5,
-                    zIndex: 2,
-                    '&:hover': {
-                      opacity: 1,
-                    },
-                  }}
-                  className="gallery-card-overlay"
-                >
-                  {item.title}
-                </Box>
               </Box>
             </Card>
           </Grid>
@@ -117,9 +79,9 @@ export default function GalleryPage() {
         fullWidth
         PaperProps={{
           sx: {
-            borderRadius: 4,
+            borderRadius: 0,
             bgcolor: theme.palette.background.paper,
-            boxShadow: 10,
+            boxShadow: 0,
           },
         }}
       >
@@ -145,26 +107,24 @@ export default function GalleryPage() {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: { xs: "column", md: "row" },
                 alignItems: "center",
                 justifyContent: "center",
                 minHeight: { xs: 300, md: 400 },
                 p: { xs: 2, md: 4 },
-                gap: { xs: 2, md: 4 },
               }}
             >
               <Box
                 sx={{
-                  flex: 1,
+                  maxHeight: 420,
+                  maxWidth: 600,
+                  overflow: "hidden",
+                  borderRadius: 0,
+                  boxShadow: 0,
+                  bgcolor: "#fff",
+                  width: "100%",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  maxHeight: 420,
-                  maxWidth: 500,
-                  overflow: "hidden",
-                  borderRadius: 3,
-                  boxShadow: 3,
-                  bgcolor: "#fff",
                 }}
               >
                 <img
@@ -175,17 +135,10 @@ export default function GalleryPage() {
                     height: "auto",
                     maxHeight: 400,
                     objectFit: "cover",
-                    borderRadius: 12,
+                    borderRadius: 0,
+                    boxShadow: "none",
                   }}
                 />
-              </Box>
-              <Box sx={{ flex: 1, minWidth: 220, p: { xs: 2, md: 3 } }}>
-                <Typography variant="h5" fontWeight={700} gutterBottom>
-                  {selectedImage.title}
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
-                  {selectedImage.description}
-                </Typography>
               </Box>
             </Box>
           )}

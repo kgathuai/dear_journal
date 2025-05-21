@@ -73,10 +73,29 @@ export default function JournalPage({ params }) {
             justifyContent: 'space-between',
             boxShadow: 2,
           }}>
-            <Typography variant="h4" sx={{ fontWeight: 700, letterSpacing: 1, textShadow: "0 2px 8px #274F3B55" }}>
+            <Typography
+              variant="h4"
+              sx={{
+                fontWeight: 700,
+                letterSpacing: 1,
+                textShadow: "0 2px 8px #274F3B55",
+                fontSize: { xs: "1.1rem", sm: "2rem", md: "2.4rem" }, // Reduced on mobile
+              }}
+            >
               {journal.title}
             </Typography>
-            <Chip label={`KES ${journal.price}`} sx={{ bgcolor: "#fff", color: "#274F3B", fontWeight: 700, fontSize: 18, px: 2, py: 1, borderRadius: 2 }} />
+            <Chip
+              label={`KES ${journal.price}`}
+              sx={{
+                bgcolor: "#fff",
+                color: "#274F3B",
+                fontWeight: 700,
+                fontSize: { xs: 14, sm: 18 },
+                px: 2,
+                py: 1,
+                borderRadius: 2
+              }}
+            />
           </Box>
         </Box>
 

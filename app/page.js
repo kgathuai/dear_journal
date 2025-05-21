@@ -12,10 +12,17 @@ export default function Home() {
         <JournalCarousel />
 
         <Typography
-          variant="h3"
+          variant="h6"
           component="h2"
           align="center"
-          sx={{ mb: 6, fontWeight: 800, letterSpacing: 1, color: "#274F3B" }}
+          sx={{
+            mb: { xs: 4, sm: 6 },
+            mt: { xs: 4, sm: 1 },
+            fontWeight: { xs: 300, sm: 800 },
+            fontSize: { xs: "20px", sm: "28px" },
+            letterSpacing: 1,
+            color: "#274F3B",
+          }}
         >
           Our Journals
         </Typography>
@@ -45,10 +52,10 @@ export default function Home() {
                 borderRadius: 4,
                 bgcolor: "#fff",
                 p: 0,
-                '&:hover': {
+                "&:hover": {
                   boxShadow: 8,
-                  transform: 'scale(1.03)'
-                }
+                  transform: "scale(1.03)",
+                },
               }}
             >
               <DearJournal

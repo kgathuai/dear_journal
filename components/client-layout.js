@@ -124,14 +124,20 @@ export function ClientHeader() {
           </IconButton>
 
           <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
-            <Image
-              src={logo}
-              alt="logo"
-              height={48}
-              width={56}
-              style={{ borderRadius: 10, marginRight: 10 }}
-              priority
-            />
+            <Box
+              component={NextLink}
+              href="/"
+              sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+            >
+              <Image
+                src={logo}
+                alt="logo"
+                height={48}
+                width={56}
+                style={{ borderRadius: 10, marginRight: 10 }}
+                priority
+              />
+            </Box>
           </Box>
 
           <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 1 }}>
