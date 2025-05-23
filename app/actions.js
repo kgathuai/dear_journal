@@ -4,12 +4,11 @@ import nodemailer from "nodemailer";
 
 export async function sendFeedback(formData) {
   try {
-    // Use environment credentials if available, otherwise use test account
     let transporter;
     let testAccount;
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       transporter = nodemailer.createTransport({
-        host: process.env.EMAIL_HOST || "smtp.ethereal.email",
+        host: process.env.EMAIL_HOST || "smtp.gmail.email",
         port: process.env.EMAIL_PORT ? Number(process.env.EMAIL_PORT) : 587,
         secure: process.env.EMAIL_SECURE === "true" || false,
         auth: {
@@ -20,7 +19,7 @@ export async function sendFeedback(formData) {
     } else {
       testAccount = await nodemailer.createTestAccount();
       transporter = nodemailer.createTransport({
-        host: "smtp.ethereal.email",
+        host: "smtp.gmail.email",
         port: 587,
         secure: false,
         auth: {
@@ -32,10 +31,10 @@ export async function sendFeedback(formData) {
 
     // Prepare email content
     const mailOptions = {
-      from: `"Journal Website" <${
-        process.env.EMAIL_FROM || "dearjournalke@gmail.com"
+      from: `" Dear Journal" <${
+        process.env.EMAIL_FROM || "mainasusan520@gmail.com"
       }>`,
-      to: process.env.EMAIL_TO || "dearjournalke@gmail.com",
+      to: process.env.EMAIL_TO || "mainasusan520@gmail.com",
       subject: `Journal Feedback: ${formData.journalType}`,
       text: `\nName: ${formData.name}\nEmail: ${formData.email}\nJournal Type: ${formData.journalType}\n\nMessage:\n${formData.message}`,
       html: `

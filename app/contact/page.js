@@ -1,18 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Container,
-  Typography,
-  Box,
-  Grid,
-  Paper,
-  TextField,
-  Button,
-  Card,
-  CardContent,
-  Link,
-} from "@mui/material";
+import { Container, Typography, Box, Grid, Paper, Link } from "@mui/material";
 import { socialMedia } from "../../lib/journals";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 

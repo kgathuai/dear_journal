@@ -12,6 +12,7 @@ import {
   Paper,
   Snackbar,
   Alert,
+  CircularProgress,
 } from "@mui/material";
 import { sendFeedback } from "@/app/actions";
 
@@ -29,6 +30,8 @@ export default function FeedbackForm() {
     severity: "success",
   });
 
+  const [submitting, setSubmitting] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -36,18 +39,17 @@ export default function FeedbackForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitting(true);
 
     try {
       const result = await sendFeedback(formData);
 
-      if (result.success) {
+      if (result?.success) {
         setSnackbar({
           open: true,
           message: "Feedback sent successfully! Thank you.",
           severity: "success",
         });
-
-        // Reset form
         setFormData({
           name: "",
           email: "",
@@ -55,7 +57,7 @@ export default function FeedbackForm() {
           message: "",
         });
       } else {
-        throw new Error(result.error || "Failed to send feedback");
+        throw new Error(result?.error || "Failed to send feedback.");
       }
     } catch (error) {
       setSnackbar({
@@ -63,6 +65,8 @@ export default function FeedbackForm() {
         message: error.message || "Failed to send feedback. Please try again.",
         severity: "error",
       });
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -123,8 +127,13 @@ export default function FeedbackForm() {
             variant="contained"
             size="large"
             sx={{ mt: 2, background: "#274F3B" }}
+            disabled={submitting}
           >
-            Submit Feedback
+            {submitting ? (
+              <CircularProgress size={24} color="inherit" />
+            ) : (
+              "Submit Feedback"
+            )}
           </Button>
         </Box>
       </form>
