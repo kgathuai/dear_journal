@@ -127,14 +127,33 @@ export function ClientHeader() {
             <Box
               component={NextLink}
               href="/"
-              sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+                borderRadius: 2,
+                px: 1.5,
+                py: 0.5,
+                boxShadow: 2,
+                transition: "box-shadow 0.2s",
+                "&:hover": { boxShadow: 6 },
+                height: { xs: 64, sm: 72 },
+              }}
             >
               <Image
                 src={logo}
                 alt="logo"
-                height={48}
-                width={56}
-                style={{ borderRadius: 10, marginRight: 10 }}
+                height={64}
+                width={80}
+                style={{
+                  borderRadius: 12,
+                  marginRight: 10,
+                  padding: 4,
+                  boxShadow: "0 2px 12px 0 rgba(0,0,0,0.10)",
+                  maxHeight: 64,
+                  width: "auto",
+                  height: "auto",
+                }}
                 priority
               />
             </Box>

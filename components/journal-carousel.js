@@ -41,18 +41,18 @@ export default function JournalCarousel() {
     <Box
       sx={{
         position: "relative",
-        width: "100vw", // Full viewport width
+        width: "100vw",
         left: "50%",
         right: "50%",
         marginLeft: "-50vw",
         marginRight: "-50vw",
-        height: { xs: 260, sm: 360, md: 480, lg: 600 }, // Restored original heights
+        height: { xs: 260, sm: 360, md: 480, lg: 600 },
         overflow: "hidden",
-        mb: { xs: 1, sm: 4 }, // Reduced margin below banner on mobile
-        mt: { xs: 0.5, sm: 0 }, // Add a small top margin on mobile for separation
-        boxShadow: 6,
+        mb: { xs: 1, sm: 4 },
+        mt: { xs: 0.5, sm: 0 },
+        boxShadow: 0,
         background: "linear-gradient(120deg, #f8faf9 60%, #e0f2f1 100%)",
-        borderRadius: 0, // Remove border radius for wall-to-wall
+        borderRadius: 0,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -61,7 +61,7 @@ export default function JournalCarousel() {
       onMouseLeave={() => setAutoPlay(true)}
       onClick={handleInteraction}
       onTouchStart={handleInteraction}
-      tabIndex={0} // Make carousel focusable for accessibility
+      tabIndex={0}
       aria-label="Journal carousel"
       role="region"
     >
@@ -84,7 +84,7 @@ export default function JournalCarousel() {
             display: "flex",
             alignItems: "flex-end",
             background: "#f8faf9",
-            borderRadius: 0, // Remove border radius for wall-to-wall
+            borderRadius: 0,
           }}
         >
           <Image
@@ -113,7 +113,7 @@ export default function JournalCarousel() {
           borderRadius: "50%",
           boxShadow: 2,
           zIndex: 10,
-          display: { xs: "none", sm: "flex" }, // Hide arrows on xs for touch
+          display: { xs: "none", sm: "flex" },
           "&:hover": { bgcolor: "#4CAF50" },
         }}
         onClick={(e) => {

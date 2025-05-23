@@ -132,8 +132,19 @@ export default function Footer() {
           </Box>
 
           {/* Quick Links */}
-          <Box sx={{ minWidth: 180, alignItems: "center", display: "flex", flexDirection: "column" }}>
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 700, textAlign: "center" }}>
+          <Box
+            sx={{
+              minWidth: 180,
+              alignItems: "center",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Typography
+              variant="h6"
+              gutterBottom
+              sx={{ fontWeight: 700, textAlign: "center" }}
+            >
               Quick Links
             </Typography>
             <Box component="nav">
@@ -166,11 +177,30 @@ export default function Footer() {
           </Box>
 
           {/* Social Media Links */}
-          <Box sx={{ minWidth: 180, alignItems: "center", display: "flex", flexDirection: "column" }}>
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 700, textAlign: "center" }}>
+          <Box
+            sx={{
+              minWidth: 180,
+              alignItems: "center",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Typography
+              variant="h6"
+              gutterBottom
+              sx={{ fontWeight: 700, textAlign: "center" }}
+            >
               Connect With Us
             </Typography>
-            <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", mt: 1, justifyContent: "center" }}>
+            <Box
+              sx={{
+                display: "flex",
+                gap: 2,
+                flexWrap: "wrap",
+                mt: 1,
+                justifyContent: "center",
+              }}
+            >
               {socialMedia.map((link) => (
                 <Box
                   key={link.name}
