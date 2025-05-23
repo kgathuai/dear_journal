@@ -42,27 +42,8 @@ export function ClientHeader() {
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center", bgcolor: "#274F3B", height: "100%" }}
     >
-      <Box
-        sx={{
-          my: 3,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Image
-          src={logo}
-          alt="logo"
-          height={60}
-          width={70}
-          style={{
-            borderRadius: 12,
-            background: "#fff",
-            boxShadow: "0 2px 12px 0 rgba(0,0,0,0.12)",
-            padding: 4,
-          }}
-        />
-      </Box>
+      <Image src={logo} alt="logo" height={60} width={70} />
+
       <List>
         {navItems.map((item) => (
           <ListItem key={item.name} disablePadding>
@@ -136,8 +117,7 @@ export function ClientHeader() {
                 py: 0.5,
                 boxShadow: 2,
                 transition: "box-shadow 0.2s",
-                "&:hover": { boxShadow: 6 },
-                height: { xs: 64, sm: 72 },
+                "&:hover": { boxShadow: 0 },
               }}
             >
               <Image
@@ -149,7 +129,6 @@ export function ClientHeader() {
                   borderRadius: 12,
                   marginRight: 10,
                   padding: 4,
-                  boxShadow: "0 2px 12px 0 rgba(0,0,0,0.10)",
                   maxHeight: 64,
                   width: "auto",
                   height: "auto",

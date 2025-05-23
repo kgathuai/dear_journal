@@ -13,11 +13,11 @@ export default function Footer() {
       sx={{
         bgcolor: "#274F3B",
         color: "#fff",
-        py: 3, // Reduced vertical padding
-        mt: 4, // Reduced margin top
+        py: 3,
+        mt: 4,
         boxShadow: 4,
-        borderTopLeftRadius: 0, // No border radius
-        borderTopRightRadius: 0, // No border radius
+        borderTopLeftRadius: 0,
+        borderTopRightRadius: 0,
       }}
     >
       <Container maxWidth="lg">
@@ -27,8 +27,8 @@ export default function Footer() {
             flexDirection: { xs: "column", md: "row" },
             justifyContent: { xs: "center", md: "space-between" },
             alignItems: { xs: "center", md: "flex-start" },
-            gap: 3, // Reduced gap
-            mb: 2, // Reduced margin bottom
+            gap: 3,
+            mb: 2,
             textAlign: { xs: "center", md: "left" },
           }}
         >

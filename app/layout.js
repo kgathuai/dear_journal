@@ -9,7 +9,7 @@ import {
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Journal Collection",
+  title: "Dear Journal",
   description: "Explore our five unique journal categories",
 };
 
