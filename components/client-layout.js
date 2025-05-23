@@ -104,7 +104,14 @@ export function ClientHeader() {
             <MenuIcon sx={{ fontSize: 28 }} />
           </IconButton>
 
-          <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexGrow: 1,
+              justifyContent: { xs: "flex-end", sm: "flex-start" },
+            }}
+          >
             <Box
               component={NextLink}
               href="/"
