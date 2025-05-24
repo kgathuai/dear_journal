@@ -86,6 +86,8 @@ export function ClientHeader() {
         sx={{
           px: { xs: 1, sm: 2, md: 8 },
           py: { xs: 0, sm: 0.5 },
+          mb: { xs: 0, sm: undefined },
+          pb: { xs: 0, sm: undefined },
           background: "#274F3B",
           borderBottomLeftRadius: 0,
           borderBottomRightRadius: 0,

@@ -46,16 +46,16 @@ export default function JournalCarousel() {
         right: "50%",
         marginLeft: "-50vw",
         marginRight: "-50vw",
-        height: { xs: 260, sm: 360, md: 480, lg: 600 },
+        height: { xs: 220, sm: 360, md: 480, lg: 600 },
         overflow: "hidden",
         mb: { xs: 1, sm: 4 },
-        mt: { xs: 0.5, sm: 0 },
-        boxShadow: 0,
+        mt: { xs: 0, sm: 0 },
         background: "linear-gradient(120deg, #f8faf9 60%, #e0f2f1 100%)",
         borderRadius: 0,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        pt: 0,
       }}
       onMouseEnter={() => setAutoPlay(false)}
       onMouseLeave={() => setAutoPlay(true)}
@@ -74,7 +74,7 @@ export default function JournalCarousel() {
             opacity: index === activeStep ? 1 : 0,
             pointerEvents: index === activeStep ? "auto" : "none",
             position: "absolute",
-            top: 0,
+            top: { xs: 0, sm: 8 },
             left: 0,
             width: "100%",
             height: "100%",
@@ -85,13 +85,15 @@ export default function JournalCarousel() {
             alignItems: "flex-end",
             background: "#f8faf9",
             borderRadius: 0,
+            mt: { xs: 0, sm: 2 },
+            pt: { xs: 0, sm: 2 },
           }}
         >
           <Image
             src={journals[key].image}
             alt={journals[key].title}
             fill
-            style={{ objectFit: "contain", filter: "brightness(0.93)" }} // Changed from 'cover' to 'contain'
+            style={{ objectFit: "contain", filter: "brightness(0.93)" }}
             sizes="100vw"
             priority={index === activeStep}
           />
